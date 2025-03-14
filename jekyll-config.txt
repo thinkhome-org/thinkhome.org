@@ -5,8 +5,8 @@ description: >-
   Specializovaný prodejce použité výpočetní techniky. 
   Nabízíme kvalitní použité notebooky a další výpočetní techniku se zárukou.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: yourGithubUsername
+url: "https://thinkhome.org" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: thinkhome-org
 
 # Build settings
 markdown: kramdown
