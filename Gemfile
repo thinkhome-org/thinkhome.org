@@ -19,3 +19,6 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # Lock jekyll-sass-converter to 2.x on Linux/macOS to support Ruby 3.0
 gem "jekyll-sass-converter", "~> 2.0"
+
+# Add this line to your Gemfile
+gem "ffi", "~> 1.15.5"  # Use an older version compatible with the available rubygems
