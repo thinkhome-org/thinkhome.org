@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkHome | Specializovaný prodejce použité výpočetní techniky</title>
+    <style>
+        :root {
+            --thinkpad-red: #e32726;
+            --thinkpad-black: #1a1a1a;
+            --thinkpad-gray: #686868;
+            --thinkpad-light-gray: #ebebeb;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-mono);
+            background-color: var(--thinkpad-black);
+            color: var(--thinkpad-light-gray);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(26, 26, 26, 0.97), rgba(26, 26, 26, 0.97)),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(104, 104, 104, 0.1) 2px, rgba(104, 104, 104, 0.1) 4px);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 30px 0;
+            border-bottom: 2px solid var(--thinkpad-red);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--thinkpad-light-gray);
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo span {
+            color: var(--thinkpad-red);
+        }
+        
+        .language-switch {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            z-index: 10;
+        }
+        
+        .language-switch button {
+            background: transparent;
+            border: 1px solid var(--thinkpad-gray);
+            color: var(--thinkpad-light-gray);
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-family: var(--font-mono);
+        }
+        
+        .language-switch button:hover, .language-switch button.active {
+            background-color: var(--thinkpad-red);
+            border-color: var(--thinkpad-red);
+        }
+        
+        main {
+            padding: 40px 0;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: normal;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        h1::before, h2::before, h3::before {
+            content: ">";
+            color: var(--thinkpad-red);
+            position: absolute;
+            left: -18px;
+            top: 0;
+        }
+        
+        h1 {
+            font-size: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 25px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+        
+        a {
+            color: var(--thinkpad-red);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #ff4c4b;
+        }
+        
+        a::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -1px;
+            left: 0;
+            background-color: var(--thinkpad-red);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        a:hover::after {
+            transform: scaleX(1);
+        }
+        
+        footer {
+            background-color: rgba(26, 26, 26, 0.9);
+            padding: 20px 0;
+            border-top: 2px solid var(--thinkpad-red);
+            font-size: 0.8rem;
+            color: var(--thinkpad-gray);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .legal-info {
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+        
+        .animated-code {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            overflow: hidden;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .code-line {
+            position: absolute;
+            font-family: monospace;
+            font-size: 12px;
+            color: var(--thinkpad-red);
+            white-space: nowrap;
+            animation: codescroll 10s linear infinite;
+        }
+        
+        @keyframes codescroll {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--thinkpad-gray), transparent);
+            margin: 30px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            header {
+                padding: 20px 0;
+            }
+            
+            .language-switch {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-top: 20px;
+                text-align: right;
+            }
+            
+            .animated-code {
+                display: none;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ibm-plex/6.0.0/css/ibm-plex.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-code" id="animated-code"></div>
+    
+    <header>
+        <div class="container">
+            <div class="language-switch">
+                <button class="active" onclick="switchLanguage('cs')">CZ</button>
+                <button onclick="switchLanguage('en')">EN</button>
+            </div>
+            <div class="logo">Think<span>Home</span></div>
+            <p class="lang-cs">Specializovaný prodejce použité výpočetní techniky</p>
+            <p class="lang-en">Specialized dealer of used computing equipment</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section id="about">
+            <h1 class="lang-cs">ThinkHome</h1>
+            <h1 class="lang-en">ThinkHome</h1>
+            
+            <p class="lang-cs">ThinkHome nabízí kvalitní použité notebooky a další výpočetní techniku se zárukou. Zaměřujeme se na dostupnost a spolehlivost našich produktů. Veškeré nabízené zboží prochází důkladnou kontrolou, aby splňovalo vysoké standardy kvality při zachování příznivých cen.</p>
+            
+            <p class="lang-en">ThinkHome offers quality used laptops and other computing equipment with warranty. We focus on availability and reliability of our products. All offered goods undergo thorough inspection to meet high quality standards while maintaining favorable prices.</p>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <section id="offerings">
+            <h2 class="lang-cs">Naše nabídka</h2>
+            <h2 class="lang-en">Our Offerings</h2>
+            
+            <p class="lang-cs">Specializujeme se na prodej použitých notebooků renomovaných značek s důrazem na business modely, které vynikají kvalitou zpracování a dlouhou životností. Nabízíme také další výpočetní techniku včetně stolních počítačů, monitorů a příslušenství.</p>
+            
+            <p class="lang-en">We specialize in selling used laptops from renowned brands with emphasis on business models that excel in build quality and longevity. We also offer other computing equipment including desktop computers, monitors, and accessories.</p>
+            
+            <p class="lang-cs">Naši aktuální nabídku najdete na eBay pod uživatelským jménem <a href="https://www.ebay.com/usr/resilientcrow" target="_blank">resilientcrow</a>.</p>
+            
+            <p class="lang-en">Our current offerings can be found on eBay under the username <a href="https://www.ebay.com/usr/resilientcrow" target="_blank">resilientcrow</a>.</p>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <section id="contact">
+            <h2 class="lang-cs">Kontakt</h2>
+            <h2 class="lang-en">Contact</h2>
+            
+            <p class="lang-cs">
+                E-mail: <a href="mailto:info@thinkhome.org">info@thinkhome.org</a><br>
+                Telefon: <a href="tel:+420728981602">+420 728 981 602</a><br>
+                WhatsApp: <a href="https://wa.me/420728981602">K dispozici pro rychlou komunikaci</a>
+            </p>
+            
+            <p class="lang-en">
+                E-mail: <a href="mailto:info@thinkhome.org">info@thinkhome.org</a><br>
+                Phone: <a href="tel:+420728981602">+420 728 981 602</a><br>
+                WhatsApp: <a href="https://wa.me/420728981602">Available for quick communication</a>
+            </p>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container footer-content">
+            <div class="legal-info">
+                <p class="lang-cs">
+                    Provozovatel: Štefan Paluba<br>
+                    IČO: 10727078<br>
+                    Adresa: Rytířova 777/3, Praha 12, 14300<br>
+                    Plátce DPH: Ne
+                </p>
+                <p class="lang-en">
+                    Operator: Štefan Paluba<br>
+                    ID: 10727078<br>
+                    Address: Rytířova 777/3, Prague 12, 14300<br>
+                    VAT payer: No
+                </p>
+            </div>
+            <div>
+                <p>&copy; 2025 ThinkHome</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Generate animated code background
+        function generateCode() {
+            const codeContainer = document.getElementById('animated-code');
+            const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
+            const codeLines = 15;
+            
+            for (let i = 0; i < codeLines; i++) {
+                const line = document.createElement('div');
+                line.className = 'code-line';
+                
+                let codeText = '';
+                const lineLength = Math.floor(Math.random() * 50) + 20;
+                
+                for (let j = 0; j < lineLength; j++) {
+                    codeText += characters.charAt(Math.floor(Math.random() * characters.length));
+                }
+                
+                line.textContent = codeText;
+                line.style.left = `${Math.random() * 100}%`;
+                line.style.animationDuration = `${Math.random() * 15 + 5}s`;
+                line.style.animationDelay = `${Math.random() * 5}s`;
+                
+                codeContainer.appendChild(line);
+            }
+        }
+        
+        // Switch language function
+        function switchLanguage(lang) {
+            document.querySelectorAll('.language-switch button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.language-switch button[onclick="switchLanguage('${lang}')"]`).classList.add('active');
+            
+            if (lang === 'cs') {
+                document.querySelectorAll('.lang-cs').forEach(el => {
+                    el.style.display = 'block';
+                });
+                document.querySelectorAll('.lang-en').forEach(el => {
+                    el.style.display = 'none';
+                });
+            } else {
+                document.querySelectorAll('.lang-cs').forEach(el => {
+                    el.style.display = 'none';
+                });
+                document.querySelectorAll('.lang-en').forEach(el => {
+                    el.style.display = 'block';
+                });
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            generateCode();
+            switchLanguage('cs');
+            
+            // Create more animated code lines periodically
+            setInterval(() => {
+                const codeContainer = document.getElementById('animated-code');
+                const oldLines = document.querySelectorAll('.code-line');
+                
+                // Remove some old lines if there are too many
+                if (oldLines.length > 30) {
+                    for (let i = 0; i < 5; i++) {
+                        if (oldLines[i]) {
+                            oldLines[i].remove();
+                        }
+                    }
+                }
+                
+                // Add new lines
+                generateCode();
+            }, 10000);
+        });
+    </script>
+</body>
+</html>

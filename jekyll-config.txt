@@ -1,0 +1,36 @@
+# Site settings
+title: ThinkHome
+email: info@thinkhome.org
+description: >-
+  Specializovaný prodejce použité výpočetní techniky. 
+  Nabízíme kvalitní použité notebooky a další výpočetní techniku se zárukou.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: yourGithubUsername
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .idea
+  - .gitignore
+  - README.md
+
+# Multilanguage support
+languages: ["cs", "en"]
+default_lang: "cs"
+exclude_from_localization: ["assets", "images", "css", "js"]
+parallel_localization: true
+
+# Collections
+collections:
+  posts:
+    output: true
