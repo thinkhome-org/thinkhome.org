@@ -1,0 +1,441 @@
+/* ThinkPad-Styled Website CSS */
+
+:root {
+  /* ThinkPad Color Palette */
+  --thinkpad-black: #000000;
+  --thinkpad-dark-gray: #1d1d1d;
+  --thinkpad-gray: #333333;
+  --thinkpad-light-gray: #e0e0e0;
+  --thinkpad-red: #e60012;
+  --thinkpad-white: #ffffff;
+  
+  /* Font Families */
+  --font-primary: 'IBM Plex Sans', Arial, sans-serif;
+  --font-secondary: 'IBM Plex Mono', monospace;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-primary);
+  background-color: var(--thinkpad-black);
+  color: var(--thinkpad-white);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: var(--thinkpad-red);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--thinkpad-light-gray);
+}
+
+/* Layout */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+/* Header */
+header {
+  background-color: var(--thinkpad-black);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--thinkpad-gray);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.logo-text span.think {
+  color: var(--thinkpad-white);
+}
+
+.logo-text span.home {
+  color: var(--thinkpad-red);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  color: var(--thinkpad-white);
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--thinkpad-red);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--thinkpad-dark-gray);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-color: var(--thinkpad-red);
+  color: var(--thinkpad-white);
+}
+
+.btn-primary:hover {
+  background-color: #c5000f;
+  color: var(--thinkpad-white);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--thinkpad-white);
+  border: 2px solid var(--thinkpad-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--thinkpad-white);
+  color: var(--thinkpad-black);
+}
+
+/* Features Section */
+.features {
+  background-color: var(--thinkpad-black);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-item {
+  background-color: var(--thinkpad-dark-gray);
+  padding: 2rem;
+  border-left: 3px solid var(--thinkpad-red);
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  color: var(--thinkpad-red);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Products Section */
+.products {
+  background-color: var(--thinkpad-gray);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background-color: var(--thinkpad-dark-gray);
+  border-radius: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 1.5rem;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  color: var(--thinkpad-red);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* About Section */
+.about {
+  background-color: var(--thinkpad-black);
+}
+
+/* Services Section */
+.services {
+  background-color: var(--thinkpad-gray);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-item {
+  background-color: var(--thinkpad-dark-gray);
+  padding: 2rem;
+  border-top: 3px solid var(--thinkpad-red);
+}
+
+/* Contact Section */
+.contact {
+  background-color: var(--thinkpad-black);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.contact-info-icon {
+  color: var(--thinkpad-red);
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--thinkpad-gray);
+  background-color: var(--thinkpad-dark-gray);
+  color: var(--thinkpad-white);
+  border-radius: 0;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--thinkpad-red);
+}
+
+/* Footer */
+footer {
+  background-color: var(--thinkpad-dark-gray);
+  padding: 3rem 0;
+  border-top: 1px solid var(--thinkpad-gray);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-heading {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  bottom: -10px;
+  left: 0;
+  background-color: var(--thinkpad-red);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--thinkpad-gray);
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero {
+    padding: 4rem 0;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+}
+
+/* ThinkPad-specific UI Elements */
+.trackpoint {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--thinkpad-red);
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.thinkpad-card {
+  background-color: var(--thinkpad-dark-gray);
+  border: 1px solid var(--thinkpad-gray);
+  border-radius: 0;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.thinkpad-divider {
+  height: 1px;
+  background-color: var(--thinkpad-gray);
+  margin: 2rem 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}

@@ -1,0 +1,214 @@
+/* E-ink Style Theme */
+:root {
+  /* E-ink Color Palette */
+  --eink-black: #000000;
+  --eink-dark-gray: #333333;
+  --eink-gray: #666666;
+  --eink-light-gray: #e0e0e0;
+  --eink-white: #ffffff;
+  
+  /* Font Variables */
+  --eink-font-primary: 'Georgia', serif;
+  --eink-font-secondary: 'Courier New', monospace;
+}
+
+/* Base E-ink Styles */
+.eink-mode {
+  background-color: var(--eink-white);
+  color: var(--eink-black);
+  font-family: var(--eink-font-primary);
+  line-height: 1.6;
+  
+  /* Remove animations and transitions for better e-ink display */
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Typography for E-ink */
+.eink-mode h1, 
+.eink-mode h2, 
+.eink-mode h3, 
+.eink-mode h4, 
+.eink-mode h5, 
+.eink-mode h6 {
+  font-weight: 700;
+  margin-top: 0;
+  color: var(--eink-black);
+}
+
+.eink-mode p {
+  margin-bottom: 1.5rem;
+}
+
+.eink-mode a {
+  color: var(--eink-black);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Layout for E-ink */
+.eink-mode .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.eink-mode .section {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--eink-light-gray);
+}
+
+/* Header for E-ink */
+.eink-mode header {
+  background-color: var(--eink-white);
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--eink-black);
+}
+
+.eink-mode .logo-text span.think,
+.eink-mode .logo-text span.home {
+  color: var(--eink-black);
+}
+
+/* Navigation for E-ink */
+.eink-mode .nav-links a {
+  color: var(--eink-black);
+  font-weight: 700;
+}
+
+.eink-mode .nav-links a::after {
+  display: none;
+}
+
+/* Hero Section for E-ink */
+.eink-mode .hero {
+  background-color: var(--eink-white);
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--eink-light-gray);
+}
+
+/* Buttons for E-ink */
+.eink-mode .btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--eink-black);
+  border-radius: 0;
+  font-weight: 700;
+  background-color: var(--eink-white);
+  color: var(--eink-black);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.eink-mode .btn-primary {
+  background-color: var(--eink-black);
+  color: var(--eink-white);
+}
+
+/* Features Section for E-ink */
+.eink-mode .feature-item {
+  background-color: var(--eink-white);
+  padding: 2rem;
+  border: 1px solid var(--eink-black);
+  margin-bottom: 1rem;
+}
+
+.eink-mode .feature-icon {
+  color: var(--eink-black);
+}
+
+/* Products Section for E-ink */
+.eink-mode .product-card {
+  background-color: var(--eink-white);
+  border: 1px solid var(--eink-black);
+  margin-bottom: 2rem;
+}
+
+.eink-mode .product-details {
+  padding: 1.5rem;
+}
+
+.eink-mode .product-price {
+  color: var(--eink-black);
+  font-weight: 700;
+}
+
+/* Services Section for E-ink */
+.eink-mode .service-item {
+  background-color: var(--eink-white);
+  padding: 2rem;
+  border: 1px solid var(--eink-black);
+  margin-bottom: 1rem;
+}
+
+/* Contact Section for E-ink */
+.eink-mode .contact-info-icon {
+  color: var(--eink-black);
+}
+
+/* Form Elements for E-ink */
+.eink-mode input, 
+.eink-mode textarea, 
+.eink-mode select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--eink-black);
+  background-color: var(--eink-white);
+  color: var(--eink-black);
+  border-radius: 0;
+}
+
+/* Footer for E-ink */
+.eink-mode footer {
+  background-color: var(--eink-white);
+  padding: 2rem 0;
+  border-top: 2px solid var(--eink-black);
+}
+
+.eink-mode .footer-heading::after {
+  background-color: var(--eink-black);
+}
+
+/* High contrast adjustments for better readability */
+.eink-mode img {
+  filter: grayscale(100%) contrast(120%);
+}
+
+.eink-mode .product-image {
+  border: 1px solid var(--eink-black);
+}
+
+/* Simplified UI elements for E-ink */
+.eink-mode .thinkpad-card {
+  background-color: var(--eink-white);
+  border: 1px solid var(--eink-black);
+  padding: 1.5rem;
+}
+
+.eink-mode .thinkpad-divider {
+  height: 1px;
+  background-color: var(--eink-black);
+  margin: 2rem 0;
+}
+
+/* Print-friendly styles (similar to E-ink) */
+@media print {
+  .eink-mode {
+    background-color: white;
+    color: black;
+  }
+  
+  .eink-mode a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  .eink-mode .btn {
+    border: 1px solid black;
+    background: none !important;
+    color: black !important;
+  }
+}

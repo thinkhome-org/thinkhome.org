@@ -1,0 +1,83 @@
+{
+  "home": {
+    "hero_title": "Professional Laptop Refurbishment & Repair",
+    "hero_subtitle": "Quality used computing equipment with warranty and expert service",
+    "browse_products": "Browse Products",
+    "our_services": "Our Services",
+    "why_choose_us": "Why Choose ThinkHome",
+    "quality_title": "Quality Refurbishment",
+    "quality_description": "All our laptops undergo thorough testing and professional refurbishment to ensure reliability and performance.",
+    "expertise_title": "Technical Expertise",
+    "expertise_description": "Our technicians specialize in ThinkPad and business-grade laptops with years of experience in repair and upgrades.",
+    "warranty_title": "Warranty Included",
+    "warranty_description": "Every laptop comes with a warranty for your peace of mind and ongoing technical support.",
+    "featured_products": "Featured Products",
+    "view_all": "View All Products",
+    "view_details": "View Details",
+    "our_services_title": "Our Services",
+    "repair_service_title": "Laptop Repair Service",
+    "repair_service_description": "Professional repair service for all laptop brands with focus on ThinkPad and business models.",
+    "repair_service_item1": "Motherboard-level repairs",
+    "repair_service_item2": "Screen replacement",
+    "repair_service_item3": "Keyboard and battery replacement",
+    "upgrade_service_title": "Hardware Upgrades",
+    "upgrade_service_description": "Boost your laptop's performance with our professional upgrade services.",
+    "upgrade_service_item1": "SSD and RAM upgrades",
+    "upgrade_service_item2": "Battery replacements",
+    "upgrade_service_item3": "Screen upgrades (resolution, brightness)",
+    "learn_more": "Learn More",
+    "ebay_title": "Visit Our eBay Store",
+    "ebay_notice": "We also sell on eBay! Check out our store for additional inventory and special deals.",
+    "visit_ebay": "Visit eBay Store"
+  },
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact",
+    "blog": "Blog",
+    "docs": "Documentation"
+  },
+  "products": {
+    "title": "Our Products",
+    "description": "Browse our selection of professionally refurbished laptops and accessories.",
+    "filter_by": "Filter by",
+    "all_products": "All Products",
+    "laptops": "Laptops",
+    "desktops": "Desktops",
+    "accessories": "Accessories",
+    "sort_by": "Sort by",
+    "price_low_high": "Price: Low to High",
+    "price_high_low": "Price: High to Low",
+    "newest": "Newest First",
+    "in_stock": "In Stock",
+    "out_of_stock": "Out of Stock",
+    "t480_description": "Reliable business laptop with excellent battery life and performance",
+    "x1_carbon_description": "Ultra-light premium business laptop with exceptional build quality",
+    "p1_gen4_description": "Powerful mobile workstation with professional graphics capabilities"
+  },
+  "footer": {
+    "quick_links": "Quick Links",
+    "legal": "Legal",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms & Conditions",
+    "refund_policy": "Refund Policy",
+    "contact_us": "Contact Us",
+    "address": "Rytířova 777/3, Kamýk, 143 00 Prague 12, Czech Republic",
+    "email": "info@thinkhome.org",
+    "phone": "+420 728 981 602",
+    "copyright": "© 2025 ThinkHome. All rights reserved.",
+    "business_id": "Business ID (IČO): 10727078"
+  },
+  "theme": {
+    "light_mode": "Light Mode",
+    "dark_mode": "Dark Mode",
+    "eink_mode": "E-ink Mode"
+  },
+  "language": {
+    "select_language": "Select Language",
+    "english": "English",
+    "czech": "Čeština"
+  }
+}

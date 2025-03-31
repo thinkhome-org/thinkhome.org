@@ -1,0 +1,141 @@
+/* ThinkPad-Styled Website - Responsive Adjustments */
+
+/* Base responsive settings already in main CSS */
+
+/* Additional Media Queries for better responsiveness */
+@media (max-width: 992px) {
+  .feature-grid,
+  .product-grid,
+  .service-grid,
+  .contact-grid,
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile Navigation */
+  .mobile-menu-btn {
+    display: block;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--thinkpad-dark-gray);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease;
+    z-index: 99;
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links li {
+    margin: 1.5rem 0;
+  }
+  
+  /* Adjust grid layouts for mobile */
+  .feature-grid,
+  .product-grid,
+  .service-grid,
+  .contact-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Adjust hero section for mobile */
+  .hero {
+    text-align: center;
+  }
+  
+  .hero-content {
+    margin: 0 auto;
+  }
+  
+  /* Adjust section padding */
+  .section {
+    padding: 2.5rem 0;
+  }
+  
+  /* Adjust typography */
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  /* Adjust buttons for mobile */
+  .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+  }
+  
+  .hero {
+    padding: 3rem 0;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  /* Adjust form elements */
+  input, textarea, select {
+    padding: 0.6rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  header, footer, .hero, .contact form {
+    display: none;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: none;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  .thinkpad-card, .feature-item, .product-card, .service-item {
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}
